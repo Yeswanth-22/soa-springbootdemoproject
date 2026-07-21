@@ -1,0 +1,10 @@
+package com.klef.soa.service;
+
+import java.util.List;
+
+import com.klef.soa.entity.Patient;
+
+public interface PatientService {
+	Patient addPatient(Patient p);
+	List<Patient> displayAllPatients();
+}
