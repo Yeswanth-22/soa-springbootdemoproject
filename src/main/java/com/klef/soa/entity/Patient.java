@@ -1,5 +1,10 @@
 package com.klef.soa.entity;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,6 +35,10 @@ public class Patient {
 	private String location;
 	@Column(nullable = false)
 	private String remarks;
+	@CreationTimestamp
+	private LocalDateTime createdAt;
+	@UpdateTimestamp
+	private LocalDateTime updatedAt;
 	public long getId() {
 		return id;
 	}
@@ -89,5 +98,17 @@ public class Patient {
 		return "Patient [id=" + id + ", name=" + name + ", gender=" + gender + ", email=" + email + ", contact="
 				+ contact + ", age=" + age + ", status=" + status + ", location=" + location + ", remarks=" + remarks
 				+ "]";
+	}
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 }
