@@ -8,4 +8,7 @@ public interface PatientService {
 	Patient addPatient(Patient p);
 	List<Patient> displayAllPatients();
 	Patient updatePatient(Patient p);
+	Patient displayPatientById(Long id);
+	String deletePatientById(Long id);
+	List<Patient> displayPatientsByGender(String gender);
 }
