@@ -41,7 +41,7 @@ public class PatientServiceImpl implements PatientService{
 
 	@Override
 	public Patient displayPatientById(Long id) {
-		return repo.findById(id).orElseThrow(null);
+		return repo.findById(id).orElse(null);
 	}
 
 	@Override
@@ -58,6 +58,11 @@ public class PatientServiceImpl implements PatientService{
 	@Override
 	public List<Patient> displayPatientsByGender(String gender) {
 		return repo.findByGender(gender);
+	}
+
+	@Override
+	public Long displayPatientCount() {
+		return repo.count();
 	}
 
 }
